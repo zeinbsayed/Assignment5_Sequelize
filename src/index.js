@@ -1,16 +1,16 @@
 import express from "express";
-import { commentRouter, postRouter, userRouter } from "./modules/index.js";
+import { dbConnection } from "./DB/db.connection.js";
 import { port } from "../Config/config.js";
-import { intializeDB } from "./DB/db.intialize.js";
+import { authorRouter, bookRouter } from "./modules/index.js";
+import logsRouter from "./modules/Logs/logs.controller.js";
 const app=express();
-
-//app.listen(port,()=>{console.log("Server Running on port",port)});
+//const port=3000;
 //connect to DB//////////
 const startServer = async () => {
     try {
-        await intializeDB();
+        await dbConnection();
 
-        app.listen(3000, () => {
+        app.listen(port, () => {
             console.log(`Server Running on port ${port}`);
         });
     } catch (error) {
@@ -20,14 +20,13 @@ const startServer = async () => {
 
 //run server/////////
 startServer();
-//intializeDB();
 //parsing body
 app.use(express.json());
 
 /////////////Routers and Controllers  ///////////
-app.use('/users',userRouter)
-app.use('/posts',postRouter)
-app.use('/comments',commentRouter);
+app.use('/books',bookRouter)
+app.use('/authors',authorRouter)
+app.use('/logs',logsRouter)
 
 
 //Sample endPoint //////landing page

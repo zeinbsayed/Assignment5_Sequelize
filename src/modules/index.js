@@ -1,3 +1,3 @@
-export *  from "./Users/index.js";
-export * from "./Posts/index.js";
-export * from "./Comments/index.js"
+export *  from "./Books/index.js";
+export * from "./Authors/index.js";
+export * from "./Logs/index.js"

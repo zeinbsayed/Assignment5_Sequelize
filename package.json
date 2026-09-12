@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start:dev": "cross-env NODE_ENV=development node --watch src/index.js",
-    "start:nodemon": "cross-env NODE_ENV=production nodemon src/index.js"
+    "start:dev": " cross-env NODE_ENV=development  node --watch-path=. ./src/index.js",
+    "start:nodemon": "cross-env NODE_ENV=production   node ./src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,7 @@
     "cross-env": "^10.1.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mysql2": "^3.24.2",
-    "sequelize": "^6.37.8"
+    "mongodb": "^7.6.0",
+    "mongoose": "^9.9.5"
   }
 }

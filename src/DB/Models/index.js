@@ -1,3 +1,3 @@
-export * from "./users.model.js";
-export * from "./posts.model.js";
-export * from "./comments.model.js";
+export * from "./books.model.js";
+export * from "./authors.model.js";
+
